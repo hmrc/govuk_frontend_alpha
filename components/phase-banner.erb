@@ -1,0 +1,9 @@
+<% phase = phase or nil %>
+<% message = message or nil %>
+<% messageHtml = messageHtml or nil %>
+<div class="gv-c-phase-banner">
+  <p class="gv-c-phase-banner__content">
+    <strong class="gv-c-phase-tag"><%= phase %></strong>
+    <span class="gv-c-phase-banner__text"><% if message %><%= message %><% else %><%= safe(messageHtml) %><% end %></span>
+  </p>
+</div>

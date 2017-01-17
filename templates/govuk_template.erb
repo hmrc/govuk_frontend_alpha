@@ -1,0 +1,100 @@
+<%= content_for?(:top_of_page) ? yield(:top_of_page) : ''.html_safe %>
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="<%= content_for?(:html_lang) ? yield(:html_lang) : 'en'.html_safe %>"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="<%= content_for?(:html_lang) ? yield(:html_lang) : 'en'.html_safe %>"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title><%= content_for?(:page_title) ? yield(:page_title) : 'GOV.UK - The best place to find government services and information'.html_safe %></title>
+
+    <!--[if gt IE 8]><!--><link href="<%= asset_path 'govuk-frontend.css?0.0.1' %>" media="screen" rel="stylesheet" /><!--<![endif]-->
+    <!--[if IE 6]><link href="<%= asset_path 'govuk-template-ie6.css?0.0.1' %>" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 7]><link href="<%= asset_path 'govuk-template-ie7.css?0.0.1' %>" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 8]><link href="<%= asset_path 'govuk-template-ie8.css?0.0.1' %>" media="screen" rel="stylesheet" /><![endif]-->
+    <link href="<%= asset_path 'govuk-template-print.css?0.0.1' %>" media="print" rel="stylesheet" />
+
+    <!--[if lte IE 8]><script src="<%= asset_path 'ie-shim.js?0.0.1' %>"></script><![endif]-->
+
+    <link rel="shortcut icon" href="<%= asset_path 'template/favicon.ico?0.0.1' %>" type="image/x-icon" />
+    <link rel="mask-icon" href="<%= asset_path 'template/gov.uk_logotype_crown.svg?0.0.1' %>" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path 'template/apple-touch-icon-152x152.png?0.0.1' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path 'template/apple-touch-icon-120x120.png?0.0.1' %>">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<%= asset_path 'template/apple-touch-icon-76x76.png?0.0.1' %>">
+    <link rel="apple-touch-icon-precomposed" href="<%= asset_path 'template/apple-touch-icon-60x60.png?0.0.1' %>">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="<%= asset_path 'template/opengraph-image.png?0.0.1' %>">
+
+    <%= content_for?(:head) ? yield(:head) : ''.html_safe %>
+  </head>
+
+  <body class="<%= content_for?(:body_classes) ? yield(:body_classes) : ''.html_safe %>">
+    <!--[if gte IE 8]><!--><script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script></script><!--<![endif]-->
+
+    <%= content_for?(:body_start) ? yield(:body_start) : ''.html_safe %>
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : 'Skip to main content'.html_safe %></a>
+      </div>
+    </div>
+
+    <div id="global-cookie-message"><%= content_for?(:cookie_message) ? yield(:cookie_message) : ''.html_safe %></div>
+
+    <header role="banner" id="global-header" class="<%= content_for?(:header_class) ? yield(:header_class) : ''.html_safe %>">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="<%= content_for?(:homepage_url) ? yield(:homepage_url) : 'https://www.gov.uk'.html_safe %>" title="<%= content_for?(:logo_link_title) ? yield(:logo_link_title) : 'Go to the GOV.UK homepage'.html_safe %>" id="logo" class="content">
+              <img src="<%= asset_path 'template/gov.uk_logotype_crown_invert_trans.png?0.0.1' %>" width="35" height="31" alt=""> <%= content_for?(:global_header_text) ? yield(:global_header_text) : 'GOV.UK'.html_safe %>
+            </a>
+          </div>
+          <%= content_for?(:inside_header) ? yield(:inside_header) : ''.html_safe %>
+        </div>
+        <%= content_for?(:proposition_header) ? yield(:proposition_header) : ''.html_safe %>
+      </div>
+    </header>
+
+    <%= content_for?(:after_header) ? yield(:after_header) : ''.html_safe %>
+
+    <div id="global-header-bar"></div>
+
+    <%= content_for?(:content) ? yield(:content) : yield %>
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+        <%= content_for?(:footer_top) ? yield(:footer_top) : ''.html_safe %>
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <%= content_for?(:footer_support_links) ? yield(:footer_support_links) : ''.html_safe %>
+
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+
+                <%= content_for?(:licence_message) ? yield(:licence_message) : '<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>'.html_safe %>
+
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/"><%= content_for?(:crown_copyright_message) ? yield(:crown_copyright_message) : '© Crown copyright'.html_safe %></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <!--[if gte IE 8]><!-->
+      <script src="<%= asset_path 'govuk-template.min.js?0.0.1' %>"></script>
+      <script src="<%= asset_path 'toolkit.min.js?0.0.1' %>"></script>
+      <script src="<%= asset_path 'components.min.js?0.0.1' %>"></script>
+    <!--<![endif]-->
+
+    <%= content_for?(:body_end) ? yield(:body_end) : ''.html_safe %>
+
+
+    <!--[if gte IE 8]><!--><script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script><!--<![endif]-->
+  </body>
+</html>

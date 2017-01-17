@@ -1,6 +1,0 @@
-node_modules/
-.DS_Store
-dist/
-public/
-npm-debug.log*
-lib/fractal/govuk-theme/assets/css/

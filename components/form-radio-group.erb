@@ -1,0 +1,33 @@
+<% id = id or nil %>
+<% name = name or nil %>
+<% legend = legend or nil %>
+<% hint = hint or nil %>
+<% error = error or nil %>
+<% radioGroup = radioGroup or nil %>
+<div class="gv-c-form-group <% if error %>gv-c-form-group--has-error<% end %>">
+  <fieldset>
+
+    <legend>
+      <span class="gv-c-form-group__label"><%= legend %></span>
+      <% if hint %>
+        <span class="gv-c-form-group__hint"><%= hint %></span>
+      <% end %>
+      <% if error %>
+        <span class="gv-c-form-group__error-message"><%= error %></span>
+      <% end %>
+    </legend>
+
+    <% radioGroup.each do |radio| %>
+      <div class="gv-c-multiple-choice">
+        <input class="gv-c-multiple-choice__control"
+               id="<%= radio.id %>"
+               type="radio"
+               name="<%= id %>"
+               value="<%= radio.value %>"
+               <% if value == radio.value %>checked<% end %>>
+        <label class="gv-c-multiple-choice__label" for="<%= radio.id %>"><%= radio.label %></label>
+      </div>
+    <% end %>
+
+  </fieldset>
+</div>

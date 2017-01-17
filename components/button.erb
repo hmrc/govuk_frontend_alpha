@@ -1,0 +1,6 @@
+<% text = text or nil %>
+<% type = type or nil %>
+<% isPrimary = isPrimary or nil %>
+<button class="gv-c-button <% if isPrimary %>gv-c-button--primary<% end %>">
+  <% if text %><%= text %><% end %>
+</button>

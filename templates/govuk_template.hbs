@@ -1,0 +1,100 @@
+{{#if top_of_page}}{{{ top_of_page }}}{{else}}{{/if}}
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="{{#if html_lang}}{{{ html_lang }}}{{else}}en{{/if}}"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{#if html_lang}}{{{ html_lang }}}{{else}}en{{/if}}"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title>{{#if page_title}}{{{ page_title }}}{{else}}GOV.UK - The best place to find government services and information{{/if}}</title>
+
+    <!--[if gt IE 8]><!--><link href="{{{ asset_path }}}stylesheets/govuk-frontend.css?0.0.1" media="screen" rel="stylesheet" /><!--<![endif]-->
+    <!--[if IE 6]><link href="{{{ asset_path }}}stylesheets/govuk-template-ie6.css?0.0.1" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 7]><link href="{{{ asset_path }}}stylesheets/govuk-template-ie7.css?0.0.1" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 8]><link href="{{{ asset_path }}}stylesheets/govuk-template-ie8.css?0.0.1" media="screen" rel="stylesheet" /><![endif]-->
+    <link href="{{{ asset_path }}}stylesheets/govuk-template-print.css?0.0.1" media="print" rel="stylesheet" />
+
+    <!--[if lte IE 8]><script src="{{{ asset_path }}}javascripts/ie-shim.js?0.0.1"></script><![endif]-->
+
+    <link rel="shortcut icon" href="{{{ asset_path }}}images/template/favicon.ico?0.0.1" type="image/x-icon" />
+    <link rel="mask-icon" href="{{{ asset_path }}}images/template/gov.uk_logotype_crown.svg?0.0.1" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{{ asset_path }}}images/template/apple-touch-icon-152x152.png?0.0.1">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{{ asset_path }}}images/template/apple-touch-icon-120x120.png?0.0.1">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{{ asset_path }}}images/template/apple-touch-icon-76x76.png?0.0.1">
+    <link rel="apple-touch-icon-precomposed" href="{{{ asset_path }}}images/template/apple-touch-icon-60x60.png?0.0.1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="{{{ asset_path }}}images/template/opengraph-image.png?0.0.1">
+
+    {{#if head}}{{{ head }}}{{else}}{{/if}}
+  </head>
+
+  <body class="{{#if body_classes}}{{{ body_classes }}}{{else}}{{/if}}">
+    <!--[if gte IE 8]><!--><script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script></script><!--<![endif]-->
+
+    {{#if body_start}}{{{ body_start }}}{{else}}{{/if}}
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">{{#if skip_link_message}}{{{ skip_link_message }}}{{else}}Skip to main content{{/if}}</a>
+      </div>
+    </div>
+
+    <div id="global-cookie-message">{{#if cookie_message}}{{{ cookie_message }}}{{else}}{{/if}}</div>
+
+    <header role="banner" id="global-header" class="{{#if header_class}}{{{ header_class }}}{{else}}{{/if}}">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="{{#if homepage_url}}{{{ homepage_url }}}{{else}}https://www.gov.uk{{/if}}" title="{{#if logo_link_title}}{{{ logo_link_title }}}{{else}}Go to the GOV.UK homepage{{/if}}" id="logo" class="content">
+              <img src="{{{ asset_path }}}images/template/gov.uk_logotype_crown_invert_trans.png?0.0.1" width="35" height="31" alt=""> {{#if global_header_text}}{{{ global_header_text }}}{{else}}GOV.UK{{/if}}
+            </a>
+          </div>
+          {{#if inside_header}}{{{ inside_header }}}{{else}}{{/if}}
+        </div>
+        {{#if proposition_header}}{{{ proposition_header }}}{{else}}{{/if}}
+      </div>
+    </header>
+
+    {{#if after_header}}{{{ after_header }}}{{else}}{{/if}}
+
+    <div id="global-header-bar"></div>
+
+    {{#if content}}{{{ content }}}{{else}}{{/if}}
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+        {{#if footer_top}}{{{ footer_top }}}{{else}}{{/if}}
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            {{#if footer_support_links}}{{{ footer_support_links }}}{{else}}{{/if}}
+
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+
+                {{#if licence_message}}{{{ licence_message }}}{{else}}<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>{{/if}}
+
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">{{#if crown_copyright_message}}{{{ crown_copyright_message }}}{{else}}© Crown copyright{{/if}}</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <!--[if gte IE 8]><!-->
+      <script src="{{{ asset_path }}}javascripts/govuk-template.min.js?0.0.1"></script>
+      <script src="{{{ asset_path }}}javascripts/toolkit.min.js?0.0.1"></script>
+      <script src="{{{ asset_path }}}javascripts/components.min.js?0.0.1"></script>
+    <!--<![endif]-->
+
+    {{#if body_end}}{{{ body_end }}}{{else}}{{/if}}
+
+
+    <!--[if gte IE 8]><!--><script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script><!--<![endif]-->
+  </body>
+</html>

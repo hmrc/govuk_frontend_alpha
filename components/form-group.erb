@@ -1,0 +1,24 @@
+<% id = id or nil %>
+<% name = name or nil %>
+<% label = label or nil %>
+<% hint = hint or nil %>
+<% error = error or nil %>
+<% isTextarea = isTextarea or nil %>
+<% value = value or nil %>
+<div class="gv-c-form-group <% if error %>gv-c-form-group--has-error<% end %>">
+  <label class="gv-c-form-group__label" for="<%= id %>">
+    <%= label %>
+    <% if hint %>
+      <span class="gv-c-form-group__hint"><%= hint %></span>
+    <% end %>
+    <% if error %>
+      <span class="gv-c-form-group__error-message"><%= error %></span>
+    <% end %>
+  </label>
+  <% if isTextarea %>
+    <textarea class="gv-c-form-group__control <% if error %>gv-c-form-group__control--has-error<% end %>" id="<%= id %>" name="<%= name %>" cols="30" rows="5"><%= value %></textarea>
+  <% end %>
+  <% if not isTextarea %>
+    <input class="gv-c-form-group__control <% if error %>gv-c-form-group__control--has-error<% end %>" id="<%= id %>" name="<%= name %>" value="<%= value %>" type="text">
+  <% end %>
+</div>

@@ -1,0 +1,57 @@
+<% id = id or nil %>
+<% name = name or nil %>
+<% legend = legend or nil %>
+<% hint = hint or nil %>
+<% error = error or nil %>
+<% day = day or nil %>
+<% month = month or nil %>
+<% year = year or nil %>
+<div class="gv-c-form-group gv-c-form-group-date <% if error %>gv-c-form-group--has-error<% end %>">
+  <fieldset>
+
+    <legend>
+      <span class="gv-c-form-group__label"><%= legend %></span>
+      <% if hint %>
+        <span class="gv-c-form-group__hint" id="<%= id %>-hint"><%= hint %></span>
+      <% end %>
+      <% if error %>
+        <span class="gv-c-form-group__error-message"><%= error %></span>
+      <% end %>
+    </legend>
+
+    <div class="gv-c-form-group gv-c-form-group__date-day">
+      <label class="gv-c-form-group__label" for="<%= day.id %>"><%= default(day.label, 'Day') %></label>
+      <input class="gv-c-form-group__control gv-c-form-group-date__control"
+             id="<%= day.id %>"
+             name="<%= id %>-day"
+             value="<%= day.value %>"
+             type="number"
+             pattern="[0-9]*"
+             <% if day.min %> min="<%= day.min %>" <% end %>
+             <% if day.max %> max="<%= day.max %>" <% end %>
+             aria-describedby="<%= id %>-hint">
+    </div>
+    <div class="gv-c-form-group gv-c-form-group__date-month">
+      <label class="gv-c-form-group__label" for="<%= month.id %>"><%= default(month.label, 'Month') %></label>
+      <input class="gv-c-form-group__control gv-c-form-group-date__control"
+             id="<%= month.id %>"
+             name="<%= id %>-month"
+             value="<%= month.value %>"
+             type="number"
+             pattern="[0-9]*"
+             <% if month.min %> min="<%= month.min %>" <% end %>
+             <% if month.max %> max="<%= month.max %>" <% end %>>
+    </div>
+    <div class="gv-c-form-group gv-c-form-group__date-year">
+      <label class="gv-c-form-group__label" for="<%= year.id %>"><%= default(year.label, 'Year') %></label>
+      <input class="gv-c-form-group__control gv-c-form-group-date__control"
+             id="<%= year.id %>"
+             name="<%= id %>-year"
+             value="<%= year.value %>"
+             type="number"
+             pattern="[0-9]*"
+             <% if year.min %> min="<%= year.min %>" <% end %>
+             <% if year.max %> max="<%= year.max %>" <% end %>>
+    </div>
+  </fieldset>
+</div>

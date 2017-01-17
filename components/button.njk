@@ -1,0 +1,6 @@
+{% macro button(text, type, isPrimary) %}
+<button class="gv-c-button {% if isPrimary %}gv-c-button--primary{% endif %}">
+  {% if text %}{{ text }}{% endif %}
+</button>
+
+{% endmacro %}
